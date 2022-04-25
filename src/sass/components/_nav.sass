@@ -1,0 +1,23 @@
+.nav
+  &__header
+
+  &__list
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    gap: min(44px, 5.2vw)
+  &__link
+    text-decoration: none
+    color: rgba($color-primary, .65)
+  &__desktop
+    display: block
+    @media screen and (max-width: $tablet)
+      display: none
+  &__mobile
+    display: none
+    width: 28px
+    height: 22px
+    @media screen and (max-width: $tablet)
+      display: block
+
