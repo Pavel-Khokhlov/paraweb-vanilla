@@ -2,8 +2,15 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+let mode = "development";
+if (process.env.NODE_ENV === "production") {
+  mode = "production";
+}
+
+console.log(mode + ' mode');
+
 module.exports = {
-  mode: 'development',
+  mode: mode,
   entry: "./src/index.js",
   plugins: [
     new HtmlWebpackPlugin({
@@ -11,12 +18,15 @@ module.exports = {
       inject: 'body', // put script to body location
       scriptLoading: "blocking", // defer off
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
   ],
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "",
+    clean: true,
   },
   module: {
     rules: [
@@ -25,8 +35,25 @@ module.exports = {
         use: ["html-loader"],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader",],
+        test: /\.(sass|scss|css)$/,
+        use: [
+          mode === "development" ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'postcss-preset-env',
+                  {
+                    // options
+                  },
+                ],
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
         test: /\.m?js$/,

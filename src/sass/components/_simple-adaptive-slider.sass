@@ -1,0 +1,80 @@
+/**
+  * SimpleAdaptiveSlider by Itchief v2.0.0 (https://github.com/itchief/ui-components/tree/master/simple-adaptive-slider)
+  * Copyright 2020 - 2021 Alexander Maltsev
+  * Licensed under MIT (https://github.com/itchief/ui-components/blob/master/LICENSE)
+  */
+.itcss
+  position: relative
+  overflow: hidden
+  width: 100vw
+  height: min(546px, 71.8vw)
+  &__wrapper
+    position: relative
+    overflow: hidden
+    background-color: #eee
+    width: 100%
+    height: 100%
+  &__items
+    display: flex
+    transition: transform 0.5s ease
+    width: 100%
+    height: 100%
+  &__item
+    flex: 0 0 100%
+    max-width: 100%
+    position: relative
+    width: 100%
+    height: 100%
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+  &__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__about
+    box-sizing: border-box
+    position: absolute
+    top: min(290px, 28.46vw)
+    left: 0
+    padding-left: min(255px, 3.84vw) 
+  &__title
+    width: min(574px, 92.3vw)
+    margin: 0 0 min(24px, 3.08vw) 0
+    font-size: min(32px, 5.12vw)
+    font-weight: 500
+    line-height: min(44px, 5.12vw)
+    color: white
+  &__text
+    margin: 0
+    width: min(453px, 92.3vw)
+    font-size: min(16px, 3.59vw)
+    font-weight: 500
+    line-height: min(22px, 4.87vw)
+    color: white
+  &__indicators
+    margin: 0
+    padding: 0
+    position: absolute
+    left: 0
+    right: 0
+    bottom: min(20px, 4.1vw)
+    display: flex
+    justify-content: center
+    gap: 5px
+    list-style: none
+    user-select: none
+  &__indicator
+    flex: 0 1 auto
+    width: 15px
+    height: 2px
+    background-color: rgba(255, 255, 255, 0.5)
+    background-clip: padding-box
+    border-radius: 1px
+    cursor: pointer
+  &__indicator_active
+    background-color: #fff
+
+/* класс для отключения transition */
+.transition-none
+  transition: none

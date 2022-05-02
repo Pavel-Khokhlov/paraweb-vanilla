@@ -1,38 +1,100 @@
 <!DOCTYPE html>
 <html lang="ru">
-  
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="test paraweb" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- CSS -->
-    <link rel='stylesheet' href='./style.css'>
-    <title>Тест Паравеб</title>
-  </head>
 
-  <body class="root">
-    <header class="header">
-      <section class="header__section">
-        <button type="button" class="button button__logo">
-          <img src="./images/logo.svg" atr="иконка логотип" class="header__logo" />
-        </button>
-        <nav class="nav nav__header">
-          <ul class="nav__list">
-            <li>
-              <a href="tel:88000000000" class="nav__link">
-                <p class="paragraph nav__desktop">8 800 000 00 00</p>
-                <img class="nav__mobile" src="./images/icon_phone.svg" atr="иконка телефон" />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:sales@logo.ru" class="nav__link">
-                <p class="paragraph nav__desktop">sales@logo.ru</p>
-                <img class="nav__mobile" src="./images/icon_email.svg" atr="иконка почта" />
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </section>
-    </header>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="test paraweb" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Тест Паравеб</title>
+</head>
+
+<body class="root">
+
+  <!-- HEADER -->
+
+  <header class="header">
+    <section class="header__section">
+      <button type="button" class="button button__logo">
+        <img src="./images/logo.svg" atr="иконка логотип" class="header__logo" />
+      </button>
+      <nav class="nav nav__header">
+        <ul class="nav__list">
+          <li>
+            <a href="tel:88000000000" class="nav__link">
+              <p class="paragraph nav__desktop">8 800 000 00 00</p>
+              <img class="nav__mobile" src="./images/icon_phone.svg" atr="иконка телефон" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sales@logo.ru" class="nav__link">
+              <p class="paragraph nav__desktop">sales@logo.ru</p>
+              <img class="nav__mobile" src="./images/icon_email.svg" atr="иконка почта" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <main class="main">
+
+    <!-- PROMO SLIDER -->
+
+    <section class="itcss">
+      <div class="itcss__wrapper">
+        <div class="itcss__items">
+          <figure class="itcss__item">
+            <img src="./images/carusel_one.png" alt="картинка первая" class="itcss__image" />
+            <figcaption class="itcss__about">
+              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
+              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+                предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="itcss__item">
+            <img src="./images/carusel_two.jpg" alt="картинка вторая" class="itcss__image" />
+            <figcaption class="itcss__about">
+              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
+              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+                предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="itcss__item">
+            <img src="./images/carusel_three.jpg" alt="картинка третья" class="itcss__image" />
+            <figcaption class="itcss__about">
+              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
+              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+                предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+
+    <!-- CARDS -->
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer"></footer>
+
+  <!-- CARD TEMPLATE -->
+
+  <template class="card-template">
+    <li class="card__body">
+      <h3 class="card__title"></h3>
+      <p class="card__text"></p>
+      <div class="card__about">
+        <p class="card__author"></p>
+        <p class="card__date"></p>
+      </div>
+    </li>
+  </template>
+</body>
+
 </html>

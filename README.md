@@ -1,4 +1,10 @@
-# ТЕСТОВОЕ ЗАДАНИЕ ПАРАВЕБ
+### ТЕСТОВОЕ ЗАДАНИЕ ПАРАВЕБ
+
+* [Ссылкв на задание](https://pavel-khokhlov.github.io/paraweb-vanilla/)
+
+**Технологии**
+
+HTML, SASS, Vanille JS, WEBPACK
 
 Предпочтительный стек: HTML5 + SCSS + Vanilla JS, при желании можно использовать фреймворк.
 Макет: https://www.figma.com/file/SDPBP4wub7uawP8Q8Ml7yi/Test-task-for-Junior-frontend-developer
