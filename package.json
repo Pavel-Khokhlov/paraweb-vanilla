@@ -41,8 +41,6 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
-    "flickity": "^3.0.0",
-    "flickity-lazyload": "^1.0.1",
     "normalize-scss": "^7.0.1"
   }
 }
