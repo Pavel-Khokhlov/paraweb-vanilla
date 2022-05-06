@@ -1,31 +1,25 @@
-/**
- * SimpleAdaptiveSlider by itchief v2.0.1 (https://github.com/itchief/ui-components/tree/master/simple-adaptive-slider)
- * Copyright 2020 - 2022 Alexander Maltsev
- * Licensed under MIT (https://github.com/itchief/ui-components/blob/master/LICENSE)
- */
-
-export default class ItcSimpleSlider {
+export default class Slider {
   // базовые классы и селекторы
-  static PREFIX = "itcss";
-  static CLASS_NAME_ITEM = `${ItcSimpleSlider.PREFIX}__item`;
-  static CLASS_NAME_ITEM_ACTIVE = `${ItcSimpleSlider.PREFIX}__item_active`;
-  static CLASS_NAME_ITEMS = `${ItcSimpleSlider.PREFIX}__items`;
-  static CLASS_NAME_INDICATOR = `${ItcSimpleSlider.PREFIX}__indicator`;
-  static CLASS_NAME_INDICATOR_ACTIVE = `${ItcSimpleSlider.PREFIX}__indicator_active`;
-  static CLASS_NAME_INDICATORS = `${ItcSimpleSlider.PREFIX}__indicators`;
-  static CLASS_NAME_CONTROL = `${ItcSimpleSlider.PREFIX}__control`;
-  static CLASS_NAME_CONTROL_PREV = `${ItcSimpleSlider.PREFIX}__control_prev`;
-  static CLASS_NAME_CONTROL_NEXT = `${ItcSimpleSlider.PREFIX}__control_next`;
-  static CLASS_NAME_CONTROL_SHOW = `${ItcSimpleSlider.PREFIX}__control_show`;
-  static SELECTOR_ITEMS = `.${ItcSimpleSlider.CLASS_NAME_ITEMS}`;
-  static SELECTOR_ITEM = `.${ItcSimpleSlider.CLASS_NAME_ITEM}`;
-  static SELECTOR_ITEM_ACTIVE = `.${ItcSimpleSlider.CLASS_NAME_ITEM_ACTIVE}`;
-  static SELECTOR_INDICATOR_ACTIVE = `.${ItcSimpleSlider.CLASS_NAME_INDICATOR_ACTIVE}`;
-  static SELECTOR_INDICATORS = `.${ItcSimpleSlider.CLASS_NAME_INDICATORS}`;
-  static SELECTOR_WRAPPER = `.${ItcSimpleSlider.PREFIX}__wrapper`;
-  static SELECTOR_CONTROL = `.${ItcSimpleSlider.CLASS_NAME_CONTROL}`;
-  static SELECTOR_CONTROL_NEXT = `.${ItcSimpleSlider.CLASS_NAME_CONTROL_NEXT}`;
-  static SELECTOR_CONTROL_PREV = `.${ItcSimpleSlider.CLASS_NAME_CONTROL_PREV}`;
+  static PREFIX = "slider";
+  static CLASS_NAME_ITEM = `${Slider.PREFIX}__item`;
+  static CLASS_NAME_ITEM_ACTIVE = `${Slider.PREFIX}__item_active`;
+  static CLASS_NAME_ITEMS = `${Slider.PREFIX}__items`;
+  static CLASS_NAME_INDICATOR = `${Slider.PREFIX}__indicator`;
+  static CLASS_NAME_INDICATOR_ACTIVE = `${Slider.PREFIX}__indicator_active`;
+  static CLASS_NAME_INDICATORS = `${Slider.PREFIX}__indicators`;
+  static CLASS_NAME_CONTROL = `${Slider.PREFIX}__control`;
+  static CLASS_NAME_CONTROL_PREV = `${Slider.PREFIX}__control_prev`;
+  static CLASS_NAME_CONTROL_NEXT = `${Slider.PREFIX}__control_next`;
+  static CLASS_NAME_CONTROL_SHOW = `${Slider.PREFIX}__control_show`;
+  static SELECTOR_ITEMS = `.${Slider.CLASS_NAME_ITEMS}`;
+  static SELECTOR_ITEM = `.${Slider.CLASS_NAME_ITEM}`;
+  static SELECTOR_ITEM_ACTIVE = `.${Slider.CLASS_NAME_ITEM_ACTIVE}`;
+  static SELECTOR_INDICATOR_ACTIVE = `.${Slider.CLASS_NAME_INDICATOR_ACTIVE}`;
+  static SELECTOR_INDICATORS = `.${Slider.CLASS_NAME_INDICATORS}`;
+  static SELECTOR_WRAPPER = `.${Slider.PREFIX}__wrapper`;
+  static SELECTOR_CONTROL = `.${Slider.CLASS_NAME_CONTROL}`;
+  static SELECTOR_CONTROL_NEXT = `.${Slider.CLASS_NAME_CONTROL_NEXT}`;
+  static SELECTOR_CONTROL_PREV = `.${Slider.CLASS_NAME_CONTROL_PREV}`;
   // порог для переключения слайда (20%)
   static SWIPE_THRESHOLD = 20;
   // класс для отключения transition
@@ -34,9 +28,9 @@ export default class ItcSimpleSlider {
   constructor(target, config) {
     this._el =
       typeof target === "string" ? document.querySelector(target) : target;
-    this._elWrapper = this._el.querySelector(ItcSimpleSlider.SELECTOR_WRAPPER);
-    this._elItems = this._el.querySelector(ItcSimpleSlider.SELECTOR_ITEMS);
-    this._elsItem = this._el.querySelectorAll(ItcSimpleSlider.SELECTOR_ITEM);
+    this._elWrapper = this._el.querySelector(Slider.SELECTOR_WRAPPER);
+    this._elItems = this._el.querySelector(Slider.SELECTOR_ITEMS);
+    this._elsItem = this._el.querySelectorAll(Slider.SELECTOR_ITEM);
     // текущий индекс
     this._currentIndex = 0;
     // экстремальные значения слайдов
@@ -101,24 +95,24 @@ export default class ItcSimpleSlider {
 
   _setActiveClass() {
     const elActive = this._el.querySelector(
-      ItcSimpleSlider.SELECTOR_ITEM_ACTIVE
+      Slider.SELECTOR_ITEM_ACTIVE
     );
     elActive
-      ? elActive.classList.remove(ItcSimpleSlider.CLASS_NAME_ITEM_ACTIVE)
+      ? elActive.classList.remove(Slider.CLASS_NAME_ITEM_ACTIVE)
       : null;
     const elActiveNew = this._el.querySelector(
       `[data-index="${this._currentIndex}"]`
     );
     elActiveNew
-      ? elActiveNew.classList.add(ItcSimpleSlider.CLASS_NAME_ITEM_ACTIVE)
+      ? elActiveNew.classList.add(Slider.CLASS_NAME_ITEM_ACTIVE)
       : null;
 
     const elIndicatorActive = this._el.querySelector(
-      ItcSimpleSlider.SELECTOR_INDICATOR_ACTIVE
+      Slider.SELECTOR_INDICATOR_ACTIVE
     );
     elIndicatorActive
       ? elIndicatorActive.classList.remove(
-          ItcSimpleSlider.CLASS_NAME_INDICATOR_ACTIVE
+          Slider.CLASS_NAME_INDICATOR_ACTIVE
         )
       : null;
     const elIndicatorNew = this._el.querySelector(
@@ -126,29 +120,29 @@ export default class ItcSimpleSlider {
     );
     elIndicatorNew
       ? elIndicatorNew.classList.add(
-          ItcSimpleSlider.CLASS_NAME_INDICATOR_ACTIVE
+          Slider.CLASS_NAME_INDICATOR_ACTIVE
         )
       : null;
 
     const elPrevBtn = this._el.querySelector(
-      ItcSimpleSlider.SELECTOR_CONTROL_PREV
+      Slider.SELECTOR_CONTROL_PREV
     );
     const elNextBtn = this._el.querySelector(
-      ItcSimpleSlider.SELECTOR_CONTROL_NEXT
+      Slider.SELECTOR_CONTROL_NEXT
     );
     elPrevBtn
-      ? elPrevBtn.classList.add(ItcSimpleSlider.CLASS_NAME_CONTROL_SHOW)
+      ? elPrevBtn.classList.add(Slider.CLASS_NAME_CONTROL_SHOW)
       : null;
     elNextBtn
-      ? elNextBtn.classList.add(ItcSimpleSlider.CLASS_NAME_CONTROL_SHOW)
+      ? elNextBtn.classList.add(Slider.CLASS_NAME_CONTROL_SHOW)
       : null;
     if (!this._config.loop && this._currentIndex === 0) {
-      elPrevBtn.classList.remove(ItcSimpleSlider.CLASS_NAME_CONTROL_SHOW);
+      elPrevBtn.classList.remove(Slider.CLASS_NAME_CONTROL_SHOW);
     } else if (
       !this._config.loop &&
       this._currentIndex === this._elsItem.length - 1
     ) {
-      elNextBtn.classList.remove(ItcSimpleSlider.CLASS_NAME_CONTROL_SHOW);
+      elNextBtn.classList.remove(Slider.CLASS_NAME_CONTROL_SHOW);
     }
 
     this._el.dispatchEvent(
@@ -161,9 +155,9 @@ export default class ItcSimpleSlider {
   // смена слайдов
   _move(useTransition) {
     var translateX;
-    this._elItems.classList.remove(ItcSimpleSlider.TRANSITION_NONE);
+    this._elItems.classList.remove(Slider.TRANSITION_NONE);
     if (useTransition === false) {
-      this._elItems.classList.add(ItcSimpleSlider.TRANSITION_NONE);
+      this._elItems.classList.add(Slider.TRANSITION_NONE);
     }
     if (this._direction === "none") {
       translateX = this._transform * this._width;
@@ -236,18 +230,18 @@ export default class ItcSimpleSlider {
   // добавление индикаторов
   _addIndicators() {
     if (
-      this._el.querySelector(ItcSimpleSlider.SELECTOR_INDICATORS) ||
+      this._el.querySelector(Slider.SELECTOR_INDICATORS) ||
       !this._config.indicators
     ) {
       return;
     }
     let html = "";
     for (let i = 0, length = this._elsItem.length; i < length; i++) {
-      html += `<li class="${ItcSimpleSlider.CLASS_NAME_INDICATOR}" data-slide-to="${i}"></li>`;
+      html += `<li class="${Slider.CLASS_NAME_INDICATOR}" data-slide-to="${i}"></li>`;
     }
     this._el.insertAdjacentHTML(
       "beforeend",
-      `<ol class="${ItcSimpleSlider.CLASS_NAME_INDICATORS}">${html}</ol>`
+      `<ol class="${Slider.CLASS_NAME_INDICATORS}">${html}</ol>`
     );
   }
 
@@ -323,7 +317,7 @@ export default class ItcSimpleSlider {
     function onClick(e) {
       var $target = e.target;
       this._autoplay("stop");
-      if ($target.classList.contains(ItcSimpleSlider.CLASS_NAME_CONTROL)) {
+      if ($target.classList.contains(Slider.CLASS_NAME_CONTROL)) {
         e.preventDefault();
         this._direction = $target.dataset.slide;
         this._move();
@@ -366,7 +360,7 @@ export default class ItcSimpleSlider {
 
     function onSwipeStart(e) {
       this._autoplay("stop");
-      if (e.target.closest(ItcSimpleSlider.CLASS_NAME_CONTROL)) {
+      if (e.target.closest(Slider.CLASS_NAME_CONTROL)) {
         return;
       }
       var event = e.type.search("touch") === 0 ? e.touches[0] : e;
@@ -404,7 +398,7 @@ export default class ItcSimpleSlider {
       }
       var value = diffPosX / this._elWrapper.getBoundingClientRect().width;
       var translateX = this._transform - value;
-      this._elItems.classList.add(ItcSimpleSlider.TRANSITION_NONE);
+      this._elItems.classList.add(Slider.TRANSITION_NONE);
       translateX = translateX * this._width;
       this._elItems.style.transform = "translateX(" + translateX + "px)";
     }
@@ -429,11 +423,11 @@ export default class ItcSimpleSlider {
       }
       var value =
         (diffPosX / this._elWrapper.getBoundingClientRect().width) * 100;
-      this._elItems.classList.remove(ItcSimpleSlider.TRANSITION_NONE);
-      if (value > ItcSimpleSlider.SWIPE_THRESHOLD) {
+      this._elItems.classList.remove(Slider.TRANSITION_NONE);
+      if (value > Slider.SWIPE_THRESHOLD) {
         this._direction = "next";
         this._move();
-      } else if (value < -ItcSimpleSlider.SWIPE_THRESHOLD) {
+      } else if (value < -Slider.SWIPE_THRESHOLD) {
         this._direction = "prev";
         this._move();
       } else {
@@ -524,7 +518,7 @@ export default class ItcSimpleSlider {
         return;
       }
       this._autoplay("stop");
-      this._elItems.classList.add(ItcSimpleSlider.TRANSITION_NONE);
+      this._elItems.classList.add(Slider.TRANSITION_NONE);
       this._width = parseInt(newWidth.toFixed(1), 10);
       newTranslateX = newWidth * parseInt(this._elItems.dataset.translate, 10);
       this._elItems.style.transform = "translateX(" + newTranslateX + "px)";

@@ -39,32 +39,32 @@
 
     <!-- PROMO SLIDER -->
 
-    <section class="itcss">
-      <div class="itcss__wrapper">
-        <div class="itcss__items">
-          <figure class="itcss__item">
-            <img src="./images/carusel_one.png" alt="картинка первая" class="itcss__image" />
-            <figcaption class="itcss__about">
-              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
-              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+    <section class="slider">
+      <div class="slider__wrapper">
+        <div class="slider__items">
+          <figure class="slider__item">
+            <img src="./images/carusel_one.png" alt="картинка первая" class="slider__image" />
+            <figcaption class="slider__about">
+              <h2 class="slider__title">IT-инфраструктура для бизнеса</h2>
+              <p class="slider__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
                 предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
               </p>
             </figcaption>
           </figure>
-          <figure class="itcss__item">
-            <img src="./images/carusel_two.jpg" alt="картинка вторая" class="itcss__image" />
-            <figcaption class="itcss__about">
-              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
-              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+          <figure class="slider__item">
+            <img src="./images/carusel_two.jpg" alt="картинка вторая" class="slider__image" />
+            <figcaption class="slider__about">
+              <h2 class="slider__title">IT-инфраструктура для бизнеса</h2>
+              <p class="slider__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
                 предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
               </p>
             </figcaption>
           </figure>
-          <figure class="itcss__item">
-            <img src="./images/carusel_three.jpg" alt="картинка третья" class="itcss__image" />
-            <figcaption class="itcss__about">
-              <h2 class="itcss__title">IT-инфраструктура для бизнеса</h2>
-              <p class="itcss__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
+          <figure class="slider__item">
+            <img src="./images/carusel_three.jpg" alt="картинка третья" class="slider__image" />
+            <figcaption class="slider__about">
+              <h2 class="slider__title">IT-инфраструктура для бизнеса</h2>
+              <p class="slider__text">Мы предлагаем комплексные решения для всех уровней бизнеса: от индивидуальных
                 предпринимателей до крупных международных компаний. Более 20 000 клиентов по всему миру доверяют нам.
               </p>
             </figcaption>
@@ -77,6 +77,10 @@
 
     <!-- CARDS -->
 
+    <section class="cards">
+      <ul class="cards__list"></ul>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -86,8 +90,9 @@
   <!-- CARD TEMPLATE -->
 
   <template class="card-template">
-    <li class="card__body">
+    <li class="card">
       <h3 class="card__title"></h3>
+      <div class="card__line"></div>
       <p class="card__text"></p>
       <div class="card__about">
         <p class="card__author"></p>

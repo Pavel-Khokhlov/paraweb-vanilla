@@ -1,11 +1,16 @@
 .header
-  width: 100vw
-  height: min(88px, 17.5vw)
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  background-color: $color-secondary
   border-bottom: 1px solid $color-light
   display: flex
   justify-content: center
   align-items: center
+  z-index: 10
   &__section
+    height: min(88px, 17.5vw)
     width: 80vw
     margin: 0 auto
     display: flex
