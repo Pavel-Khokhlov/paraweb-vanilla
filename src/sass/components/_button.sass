@@ -7,3 +7,16 @@
   transition: $app-transition
   &:hover
     opacity: $button-hover
+  &__logo-footer
+    position: relative
+    margin: 0 0 12px
+    width: max-content
+    height: max-content
+    @media screen and (min-width: $tablet)
+      grid-area: L
+      align-self: start
+      margin: 0
+      padding: 0
+  &__logo-header
+    width: max-content
+    height: max-content

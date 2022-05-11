@@ -1,23 +1,66 @@
 .nav
   &__header
-
-  &__list
     list-style: none
     padding: 0
     margin: 0
     display: flex
+    align-items: center
     gap: min(44px, 5.2vw)
-  &__link
+  &__link-header
     text-decoration: none
     color: rgba($color-primary, .65)
+    transition: $app-transition
+    &:hover
+      opacity: 0.5
+  &__link-footer
+    text-decoration: none
+    color: $color-secondary
+    transition: $app-transition
+    &:hover
+      opacity: 0.5
   &__desktop
     display: block
+    transition: $app-transition
+    &:hover
+      opacity: 0.5
     @media screen and (max-width: $tablet)
       display: none
   &__mobile
     display: none
     width: 28px
     height: 22px
+    transition: $app-transition
     @media screen and (max-width: $tablet)
       display: block
+      &:hover
+        transform: scale(1.1)
+  
+  &__social
+    display: flex
+    width: 100%
+    justify-content: start
+    align-items: center
+    gap: 20px
+    list-style: none
+    padding: 0
+    margin: 0 0 33px
+    @media screen and (min-width: $tablet)
+      grid-area: S
+      justify-content: center
+      margin: 0
+  &__site
+    list-style: none
+    text-decoration: none
+    padding: 0
+    margin: 0 0 48px
+    display: grid
+    grid-template-columns: repeat(2, 147px)
+    row-gap: 12px
+    @media screen and (min-width: $tablet)
+      grid-template-columns: repeat(4, auto)
+      grid-area: N
+    
+
+
+
 

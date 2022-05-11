@@ -2,13 +2,14 @@
   position: fixed
   top: 0
   left: 0
-  right: 0
+  width: 100vw
   background-color: $color-secondary
   border-bottom: 1px solid $color-light
   display: flex
   justify-content: center
   align-items: center
   z-index: 10
+  box-sizing: border-box
   &__section
     height: min(88px, 17.5vw)
     width: 80vw
@@ -16,8 +17,10 @@
     display: flex
     justify-content: space-between
     align-items: center
+    box-sizing: border-box
     @media screen and (max-width: $tablet)
-      width: 90vw
+      width: 100vw
+      padding: 0 5vw
   &__logo
     width: min(74px, 18.75vw)
 

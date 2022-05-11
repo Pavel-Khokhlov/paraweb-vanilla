@@ -1,0 +1,39 @@
+.footer
+  width: 100vw
+  padding: 32px 16px
+  background-color: $color-brand
+  box-sizing: border-box
+  @media screen and (min-width: $tablet)
+    padding: 80px 20px
+    display: grid
+    grid-template-areas: "L . . .  N N N N  N N N N""C C C C  C C C C  C C C C""S S S S  S S S S  S S S S"
+    row-gap: 14px
+  &__logo
+    width: 93.2px
+    height: 39.53px
+    @media screen and (min-width: $tablet)
+      width: 198px
+      height: 84px
+  &__icon
+    cursor: pointer
+    transition: opacity 0.5s ease
+    &:hover
+      opacity: 0.5
+  &__copyright
+    font-size: 12px
+    line-height: 20px
+    color: $color-secondary
+    opacity: 0.3
+    margin: 0 0 4px
+    @media screen and (min-width: $tablet)
+      font-size: 14px
+      grid-area: C
+      margin: 0 0 14px
+  &__licence
+    margin: 0
+    font-size: 12px
+    line-height: 20px
+    color: $color-secondary
+    opacity: 0.3
+    @media screen and (min-width: $tablet)
+      display: none
