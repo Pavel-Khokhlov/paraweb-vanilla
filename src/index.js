@@ -2,6 +2,14 @@ import "./sass/index.sass";
 
 import PromoSlider from "./components/slider";
 
+let nowDate = new Date();
+const date =
+  nowDate.getFullYear() +
+  "/" +
+  (nowDate.getMonth() + 1) +
+  "/" +
+  nowDate.getDate();
+
 document.addEventListener("DOMContentLoaded", () => {
   // инициализация слайдера
   new PromoSlider(".slider", {
@@ -14,8 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 import Section from "./components/section.js";
 import Card from "./components/card.js";
-import { cardTemplate, cardsList } from "./utils/config";
+import { cardTemplate, cardsList, author } from "./utils/config";
 import Api from "./components/api.js";
+import CardsStore from "./components/store";
+import Select from "./components/select";
+
+const cardsStore = new CardsStore();
 
 const catchErr = (res) => {
   alert(`Всё идёт не по плану. ${res.status}`);
@@ -54,7 +66,19 @@ const getAllCards = () => {
 Promise.all([getAllCards()])
   .then((res) => {
     const cardsArr = res.map(({ articles }) => articles)[0];
-    // console.log(cardsArr[0]);
-    serverCardList.renderCards(cardsArr);
+    cardsStore.setCards(cardsArr);
   })
+  .then(() => serverCardList.renderCards(cardsStore.getCards()))
+  .then(() => {
+    const authorSelect = new Select(author, handleAuthor);
+    authorSelect.initialzeSelect(cardsStore.getAuthors());
+  })
+  .then(() => console.log(cardsStore.getAuthors()))
   .catch(catchErr);
+
+function handleAuthor(e) {
+  e.preventDefault();
+  console.log(e.target.value);
+}
+
+

@@ -8,3 +8,4 @@ export const cardTitle = ".card__title";
 export const cardText = ".card__text";
 export const cardAuthor = ".card__author";
 export const cardDate = ".card__date";
+export const author = ".form__select_author";

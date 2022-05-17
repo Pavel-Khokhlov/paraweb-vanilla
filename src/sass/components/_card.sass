@@ -19,6 +19,7 @@ $lines-to-show: 6
     color: rgba($color-primary, .65)
     white-space: nowrap
     @include text-ellipsed
+    @include deny-copy-text
   &__line
     display: block
     width: 100%
@@ -35,8 +36,9 @@ $lines-to-show: 6
     display: -webkit-box
     -webkit-line-clamp: $lines-to-show
     -webkit-box-orient: vertical
-    @include text-ellipsed
     box-sizing: border-box
+    @include text-ellipsed
+    @include deny-copy-text
   &__about
     margin: 0 0 24px
     padding: 0 26px

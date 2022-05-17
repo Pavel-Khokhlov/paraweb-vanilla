@@ -1,0 +1,29 @@
+.form
+  margin: 0 auto min(24px, 4.1vw)
+  padding: 16px 0
+  width: 295px
+  @media screen and (max-width: $mobile)
+    width: min(320px, 90vw)
+  &__lable
+    position: relative
+  &__select
+    width: 100%
+    height: 40px
+    padding: 0 32px 0 16px
+    font-size: 16px
+    line-height: 40px
+    border: 1px solid $color-light
+    color: rgba($color-primary, .65)
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    box-sizing: border-box
+    border-radius: 4px
+    @include deny-copy-text
+  &__img_user
+    position: absolute
+    top: 50%
+    right: 16px
+    transform: translate(0, -50%)
+    width: 8.81px
+    height: 9.33px

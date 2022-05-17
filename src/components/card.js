@@ -37,14 +37,12 @@ export default class Card {
     return cardElement;
   }
 
+  // Преобразование месяца из числа в текст
   _changeMonth(m) {
     return Card.MONTH[m - 1];
   }
 
-  _checkAuthor(a) {
-    return a === null ? "Unknown" : a;
-  }
-
+  // Преобразование даты в карточке
   _exchangeDate(d) {
     const date = d.substr(0, 10); // удаляем часть строки
     const dateArr = date.split("-"); // делаем массив даты
@@ -56,9 +54,7 @@ export default class Card {
     this._element = this._getTemplate();
     this._element.querySelector(cardTitle).textContent = this._title;
     this._element.querySelector(cardText).textContent = this._text;
-    this._element.querySelector(cardAuthor).textContent = this._checkAuthor(
-      this._author
-    );
+    this._element.querySelector(cardAuthor).textContent = this._author;
     this._element.querySelector(cardDate).textContent = this._exchangeDate(
       this._date
     );
