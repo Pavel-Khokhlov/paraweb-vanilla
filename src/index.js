@@ -73,12 +73,12 @@ Promise.all([getAllCards()])
     const authorSelect = new Select(author, handleAuthor);
     authorSelect.initialzeSelect(cardsStore.getAuthors());
   })
-  .then(() => console.log(cardsStore.getAuthors()))
   .catch(catchErr);
 
 function handleAuthor(e) {
   e.preventDefault();
-  console.log(e.target.value);
+  const authorCards = cardsStore.defineAuthor(e.target.value);
+  serverCardList.updateCards(authorCards);
 }
 
 

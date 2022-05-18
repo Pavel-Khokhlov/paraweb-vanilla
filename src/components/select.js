@@ -6,7 +6,6 @@ export default class Select {
 
   initialzeSelect(arr) {
     arr.forEach((i) => {
-      console.log(i);
       this._option = document.createElement("option");
       this._option.value = i;
       this._option.innerText = i;

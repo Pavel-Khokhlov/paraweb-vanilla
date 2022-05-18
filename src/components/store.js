@@ -18,8 +18,9 @@ export default class CardsStore {
   getAuthors() {
     return CardsStore.LIST_AUTHOR;
   }
-  filteredCards(x) {
-    const result = CardsStore.CARDS.filter(x);
-    this.getCards(result);
+  defineAuthor(author) {
+    return author === "All"
+      ? CardsStore.CARDS
+      : CardsStore.CARDS.filter((card) => card.author === author);
   }
 }
